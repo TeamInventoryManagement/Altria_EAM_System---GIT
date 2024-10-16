@@ -27,8 +27,6 @@ ReactDOM.render(
         <Route path="HandoverPage" element={<HandoverPage />} />
         <Route path="SearchDevicePage" element={<SearchDevicePage />} />
         <Route path="DeviceRecordPage" element={<DeviceRecordPage />} />
-
-
       </Route>
     </Routes>
   </Router>,

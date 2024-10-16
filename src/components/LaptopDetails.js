@@ -54,7 +54,7 @@ const LaptopDetails = () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:3000/api/laptop/${searchAssetId}`);
+            const response = await fetch(`http://localhost:8080/api/laptop/${searchAssetId}`);
             if (!response.ok) {
                 const contentType = response.headers.get("content-type");
                 if (contentType && contentType.includes("text/html")) {
@@ -114,7 +114,8 @@ const LaptopDetails = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://altriaassestwebapp-e8gbbbdyc8ghhzdf.southeastasia-01.azurewebsites.net/api/LaptopDetails', {
+            console.log('check :', formData);
+            const response = await fetch('http://localhost:8080/api/LaptopDetails', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -167,7 +168,7 @@ const LaptopDetails = () => {
     const handleBulkData = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/api/LaptopDetails', {
+            const response = await fetch('http://localhost:8080/api/LaptopDetails', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -187,7 +188,7 @@ const LaptopDetails = () => {
     const handleUpdate = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/api/LaptopUpdate', {
+            const response = await fetch('https://altriaassestwebapp-e8gbbbdyc8ghhzdf.southeastasia-01.azurewebsites.net/api/LaptopUpdate', {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -225,7 +226,7 @@ const LaptopDetails = () => {
     const handleDelete = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/api/LaptopDelete', {
+            const response = await fetch('https://altriaassestwebapp-e8gbbbdyc8ghhzdf.southeastasia-01.azurewebsites.net/api/LaptopDelete', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ assetId: formData.assetId })
